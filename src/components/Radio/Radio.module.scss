@@ -1,0 +1,49 @@
+.input {
+  position: relative;
+
+  &__field {
+    position: absolute;
+    left: -9999px;
+
+    &:checked + .input__label::before {
+      border-color: var(--color-secondary);
+    }
+
+    &:checked + .input__label::after {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  &__label {
+    display: inline-block;
+    position: relative;
+    padding-left: 32px;
+    cursor: pointer;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 3px;
+      width: 18px;
+      height: 18px;
+      border: 1px solid var(--color-border);
+      border-radius: 50%;
+    }
+
+    &::after {
+      content: '';
+      width: 10px;
+      height: 10px;
+      background: var(--color-secondary);
+      position: absolute;
+      top: 8px;
+      left: 5px;
+      border-radius: 50%;
+      transition: all .2s;
+      opacity: 0;
+      transform: scale(0);
+    }
+  }
+}

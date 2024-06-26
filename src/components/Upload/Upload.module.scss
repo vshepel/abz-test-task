@@ -1,0 +1,58 @@
+.input {
+  display: grid;
+  grid-template-columns: auto 1fr;
+
+  &__field {
+    position: relative;
+    padding: 14px 9px;
+    border-color: var(--color-border);
+    border-width: 1px 1px 1px 0;
+    border-style: solid;
+    border-radius: 0 4px 4px 0;
+    background-color: var(--color-background);
+    font-size: 16px;
+    line-height: 24px;
+    outline: none;
+
+    &::-webkit-file-upload-button {
+      visibility: hidden;
+      padding: 0;
+      height: 0;
+      width: 0;
+    }
+
+    &[aria-invalid='true'] {
+      border-color: var(--color-red);
+      box-shadow: 0 0 0 1px var(--color-red);
+
+      & ~ .input__button {
+        border-color: var(--color-red);
+        box-shadow: 0 0 0 1px var(--color-red);
+      }
+    }
+
+    &[aria-invalid='true'] ~ .input__caption {
+      color: var(--color-red);
+    }
+  }
+
+  &__button {
+    order: -1;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 14px;
+    border: 1px solid var(--color-text);
+    border-radius: 4px 0 0 4px;
+    cursor: pointer;
+  }
+
+  &__caption {
+    grid-column: span 2;
+    padding: 4px 16px;
+    font-size: 12px;
+    line-height: 14px;
+    color: var(--color-text-gray);
+    text-align: left;
+  }
+}

@@ -1,0 +1,26 @@
+.users {
+  &__list {
+    width: 100%;
+    margin-top: 50px;
+    display: grid;
+    grid-gap: 20px;
+
+    @media (min-width: $media-md) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 16px;
+    }
+
+    @media (min-width: $media-lg) {
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 29px;
+    }
+  }
+
+  &__loader {
+    grid-column: 1 / -1;
+  }
+
+  &__button {
+    margin-top: 50px;
+  }
+}

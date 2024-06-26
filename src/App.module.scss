@@ -1,0 +1,75 @@
+@import "@/assets/styles/global";
+
+.header {
+    padding: 13px 0;
+    background-color: var(--color-white);
+
+    &__content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__buttons {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}
+
+.hero {
+    display: flex;
+    padding: 40px 0;
+    min-height: 500px;
+    background: url(/hero-bg.webp) no-repeat 50% / cover;
+    position: relative;
+    color: var(--color-white);
+
+    @media (min-width: $media-md) {
+        align-items: center;
+    }
+
+    @media (min-width: $media-lg) {
+        min-height: 650px;
+        max-width: 1170px;
+        margin: 0 auto;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: var(--color-black);
+        opacity: 0.5;
+    }
+
+    &__content {
+        max-width: 380px;
+        margin: 0 auto;
+        text-align: center;
+        position: relative;
+    }
+
+    &__text {
+        margin-top: 21px;
+    }
+
+    &__button {
+        margin-top: 32px;
+    }
+}
+
+.users {
+    margin: 140px 0;
+    text-align: center;
+}
+
+.request {
+    margin: 140px 0 100px;
+    text-align: center;
+
+    &__form {
+        margin-top: 50px;
+    }
+}
