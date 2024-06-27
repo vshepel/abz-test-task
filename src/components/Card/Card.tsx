@@ -19,9 +19,9 @@ function Card({ user }: Props) {
       <Text className={classes.card__text}>
         <p>{user.position}</p>
         <Tooltip tag="p" content={user.email}>
-          {user.email}
+          <a className={classes.card__link} href={`mailto:${user.email}`}>{user.email}</a>
         </Tooltip>
-        <p>{user.phone}</p>
+        <a className={classes.card__link} href={`tel:${user.phone}`}>{user.phone}</a>
       </Text>
     </div>
   )

@@ -17,4 +17,9 @@
             overflow: hidden;
         }
     }
+
+    &__link {
+        text-decoration: none;
+        color: currentColor;
+    }
 }
