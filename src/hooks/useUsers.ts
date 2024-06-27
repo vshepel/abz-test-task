@@ -10,12 +10,12 @@ function useUsers(initialPage = 1, initialCount = 6) {
   const [currentPage, setCurrentPage] = useState(initialPage)
   const [countPerPage] = useState(initialCount)
 
-  const loadUsers = (noStack = false) => {
+  const loadUsers = () => {
     setIsLoading(true)
 
     getUsers(currentPage, countPerPage)
       .then(({ data }) => {
-        setUsers(noStack ? data.users : [...users, ...data.users])
+        setUsers(currentPage > 1 ? [...users, ...data.users] : data.users)
 
         if (!data.links.next_url) {
           setHasMore(false)
@@ -27,7 +27,6 @@ function useUsers(initialPage = 1, initialCount = 6) {
 
   const reloadList = () => {
     setCurrentPage(1)
-    loadUsers(true)
   }
 
   useEffect(() => {
